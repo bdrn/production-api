@@ -1,3 +1,49 @@
 {"level":"info","message":"Hello from Acquisition!","service":"acquisitions-api"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [07/Dec/2025:19:38:04 +0000] \"GET / HTTP/1.1\" 200 24 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [07/Dec/2025:19:38:04 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [08/Dec/2025:09:35:49 +0000] \"GET /health HTTP/1.1\" 500 1295 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [08/Dec/2025:09:36:08 +0000] \"GET /api/health HTTP/1.1\" 404 149 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"Hello from Acquisition!","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [08/Dec/2025:09:36:14 +0000] \"GET / HTTP/1.1\" 200 24 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [08/Dec/2025:09:36:14 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"Hello from Acquisition!","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:09:37:26 +0000] \"GET / HTTP/1.1\" 200 24 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [08/Dec/2025:09:40:39 +0000] \"GET /health HTTP/1.1\" 200 75 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [08/Dec/2025:09:40:39 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:09:40:57 +0000] \"GET /health HTTP/1.1\" 200 75 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:09:41:04 +0000] \"GET /api HTTP/1.1\" 200 42 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:15:49:57 +0000] \"GET /sign-up HTTP/1.1\" 404 146 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:15:50:09 +0000] \"POST /sign-up HTTP/1.1\" 404 147 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:15:50:22 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 200 31 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:15:52:03 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 59 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:15:53:37 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 59 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:15:56:46 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 144 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:15:58:43 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 91 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User registered successfully: contact@badran.com","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:15:58:53 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 105 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User registered successfully: mohamad@badran.io","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:16:51:43 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 39 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User mohamad@badran.io created successfully","service":"acquisitions-api"}
+{"level":"error","message":"Error creating the user Error: User with this email already exists","service":"acquisitions-api"}
+{"level":"error","message":"Signup error User with this email already exists","service":"acquisitions-api","stack":"Error: User with this email already exists\n    at createUser (file:///Users/mohamadbadran/Projects/production-api/src/services/auth.service.js:25:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async signup (file:///Users/mohamadbadran/Projects/production-api/src/controllers/auth.controller.js:22:18)"}
+{"level":"info","message":"::1 - - [08/Dec/2025:16:55:20 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 409 32 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User mohamad@badran1.io created successfully","service":"acquisitions-api"}
+{"level":"info","message":"User registered successfully: mohamad@badran1.io","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:16:55:26 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 106 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User john@example.com created successfully","service":"acquisitions-api"}
+{"level":"info","message":"User registered successfully: john@example.com","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:19:39:26 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 104 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"error","message":"Error creating the user Error: User with this email already exists","service":"acquisitions-api"}
+{"level":"error","message":"Signup error User with this email already exists","service":"acquisitions-api","stack":"Error: User with this email already exists\n    at createUser (file:///Users/mohamadbadran/Projects/production-api/src/services/auth.service.js:34:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async signup (file:///Users/mohamadbadran/Projects/production-api/src/controllers/auth.controller.js:21:18)"}
+{"level":"info","message":"::1 - - [08/Dec/2025:19:40:27 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 409 31 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"error","message":"Error creating the user Error: User with this email already exists","service":"acquisitions-api"}
+{"level":"error","message":"Signup error User with this email already exists","service":"acquisitions-api","stack":"Error: User with this email already exists\n    at createUser (file:///Users/mohamadbadran/Projects/production-api/src/services/auth.service.js:34:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async signup (file:///Users/mohamadbadran/Projects/production-api/src/controllers/auth.controller.js:21:18)"}
+{"level":"info","message":"::1 - - [08/Dec/2025:19:40:28 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 409 31 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User john1@example.com created successfully","service":"acquisitions-api"}
+{"level":"info","message":"User registered successfully: john1@example.com","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:19:40:37 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 105 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User john1@example.com authenticated successfully","service":"acquisitions-api"}
+{"level":"info","message":"User signed in successfully: john1@example.com","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:19:42:58 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 117 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User signed out successfully","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [08/Dec/2025:19:43:20 +0000] \"POST /api/auth/sign-out HTTP/1.1\" 200 42 \"-\" \"HTTPie\"","service":"acquisitions-api"}
