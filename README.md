@@ -1,13 +1,13 @@
 # Production API
 
-A production-ready REST API built with Express.js, featuring authentication, user management, and comprehensive security measures. This API is designed for scalability and includes full CI/CD pipeline support.
+A production-ready REST API built with Express.js, featuring authentication, user management, and comprehensive security measures. This API is designed for scalability and includes CI/CD pipeline support.
 
 ## 🚀 Features
 
 - **Authentication & Authorization**: JWT-based authentication with role-based access control
 - **User Management**: Complete CRUD operations for user management
 - **Security**:
-  - Arcjet integration for advanced security
+  - Arcjet integration for security
   - Helmet.js for HTTP security headers
   - CORS configuration
   - Security middleware for rate limiting and protection
@@ -49,7 +49,7 @@ Create a `.env` file in the root directory:
 DATABASE_URL=postgresql://user:password@host:port/database?sslmode=require
 
 # JWT
-JWT_SECRET=your_strong_jwt_secret_key_here
+JWT_SECRET=your__jwt_secret_key
 JWT_EXPIRES_IN=7d
 
 # Server
@@ -250,7 +250,7 @@ The project includes three GitHub Actions workflows:
 ### 3. Docker Build and Push (`docker-build-and-push.yml`)
 
 - Runs on pushes to `main` branch or manual trigger
-- Builds multi-platform Docker images (linux/amd64, linux/arm64)
+- Builds multi-platform Docker images
 - Pushes to Docker Hub with multiple tags
 - Includes build caching for efficiency
 
@@ -259,13 +259,6 @@ The project includes three GitHub Actions workflows:
 The Docker image is automatically built and pushed to Docker Hub on each push to `main`.
 
 **Image**: `your-username/production-api`
-
-**Tags**:
-
-- `latest` - Latest stable version
-- `main` - Main branch builds
-- `main-<sha>` - Specific commit SHA
-- `prod-YYYYMMDD-HHmmss` - Production timestamp tags
 
 ## 🔑 Required Secrets
 
@@ -314,22 +307,9 @@ For GitHub Actions, configure these secrets in your repository:
 
 ISC
 
-## 🐛 Issues
-
-If you encounter any issues, please [open an issue](https://github.com/bdrn/production-api/issues) on GitHub.
-
 ## 📚 Additional Documentation
 
 - [Docker Setup Guide](./DOCKER.md) - Detailed Docker configuration
 - [Quick Start Guide](./QUICKSTART.md) - Quick setup instructions
 
-## 👤 Author
-
-**Mohamad Badran**
-
-- GitHub: [@bdrn](https://github.com/bdrn)
-- Repository: [production-api](https://github.com/bdrn/production-api)
-
 ---
-
-Built with ❤️ using Express.js, Node.js, and PostgreSQL

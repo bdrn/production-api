@@ -741,3 +741,7 @@
 {"level":"info","message":"::ffff:127.0.0.1 - - [09/Dec/2025:16:32:27 +0000] \"GET /health HTTP/1.1\" 200 75 \"-\" \"-\"","service":"acquisitions-api"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [09/Dec/2025:16:32:27 +0000] \"GET /api HTTP/1.1\" 200 42 \"-\" \"-\"","service":"acquisitions-api"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [09/Dec/2025:16:32:27 +0000] \"GET /nonexistent HTTP/1.1\" 404 27 \"-\" \"-\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:17:24:41 +0000] \"DELETE /users HTTP/1.1\" 404 27 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User authenticated: mohamad@badran.io (admin)","service":"acquisitions-api"}
+{"level":"info","message":"Getting users..","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:17:24:52 +0000] \"GET /api/users HTTP/1.1\" 200 546 \"-\" \"HTTPie\"","service":"acquisitions-api"}
