@@ -654,3 +654,35 @@
 {"level":"info","message":"::1 - - [08/Dec/2025:21:18:52 +0000] \"GET /health HTTP/1.1\" 429 59 \"-\" \"HTTPie\"","service":"acquisitions-api"}
 {"ip":"::1","level":"warn","message":"Rate limit exceeded","path":"/health","service":"acquisitions-api","userAgent":"HTTPie"}
 {"level":"info","message":"::1 - - [08/Dec/2025:21:18:52 +0000] \"GET /health HTTP/1.1\" 429 59 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:51:59 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:51:59 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:52:00 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:52:01 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:52:01 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:52:02 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"ip":"::ffff:172.19.0.1","level":"warn","message":"Rate limit exceeded","path":"/health","service":"acquisitions-api","userAgent":"HTTPie"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:52:02 +0000] \"GET /health HTTP/1.1\" 429 59 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"ip":"::ffff:172.19.0.1","level":"warn","message":"Rate limit exceeded","path":"/health","service":"acquisitions-api","userAgent":"HTTPie"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:52:03 +0000] \"GET /health HTTP/1.1\" 429 59 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"ip":"::ffff:172.19.0.1","level":"warn","message":"Rate limit exceeded","path":"/health","service":"acquisitions-api","userAgent":"HTTPie"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:52:04 +0000] \"GET /health HTTP/1.1\" 429 59 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"ip":"::ffff:172.19.0.1","level":"warn","message":"Rate limit exceeded","path":"/health","service":"acquisitions-api","userAgent":"HTTPie"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:52:04 +0000] \"GET /health HTTP/1.1\" 429 59 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"ip":"::ffff:172.19.0.1","level":"warn","message":"Rate limit exceeded","path":"/health","service":"acquisitions-api","userAgent":"HTTPie"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:52:05 +0000] \"GET /health HTTP/1.1\" 429 59 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"ip":"::ffff:172.19.0.1","level":"warn","message":"Rate limit exceeded","path":"/health","service":"acquisitions-api","userAgent":"HTTPie"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:52:05 +0000] \"GET /health HTTP/1.1\" 429 59 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:54:03 +0000] \"GET /api/sign-up HTTP/1.1\" 404 150 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:54:11 +0000] \"GET /auth/sign-up HTTP/1.1\" 404 151 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:54:17 +0000] \"GET /auth/sign-up HTTP/1.1\" 404 151 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:56:52 +0000] \"GET /auth/sign-up HTTP/1.1\" 404 151 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:56:53 +0000] \"GET /auth/sign-up HTTP/1.1\" 404 151 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:56:58 +0000] \"GET /auth/sign-up HTTP/1.1\" 404 151 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:56:59 +0000] \"GET /auth/sign-up HTTP/1.1\" 404 151 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:57:00 +0000] \"GET /auth/sign-up HTTP/1.1\" 404 151 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:57:33 +0000] \"POST /auth/sign-up HTTP/1.1\" 404 152 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:57:34 +0000] \"POST /auth/sign-up HTTP/1.1\" 404 152 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:57:35 +0000] \"POST /auth/sign-up HTTP/1.1\" 404 152 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User mohamad@gmail.com created successfully","service":"acquisitions-api"}
+{"level":"info","message":"User registered successfully: mohamad@gmail.com","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:57:48 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 104 \"-\" \"HTTPie\"","service":"acquisitions-api"}

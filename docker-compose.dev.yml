@@ -1,0 +1,46 @@
+services:
+  # Neon Local proxy for development
+  neon-local:
+    image: neondatabase/neon_local:latest
+    container_name: neon-local
+    ports:
+      - '5432:5432'
+    env_file:
+      - .env.development
+    networks:
+      - app-network
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -h localhost -p 5432 || exit 1']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Application service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: production-api-dev
+    ports:
+      - '3000:3000'
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      DATABASE_URL: postgres://neondb_owner:${NEON_DB_PASSWORD:-password}@neon-local:5432/neondb?sslmode=require
+      LOG_LEVEL: ${LOG_LEVEL:-debug}
+    env_file:
+      - .env.development
+    depends_on:
+      neon-local:
+        condition: service_healthy
+    networks:
+      - app-network
+    volumes:
+      # Mount source code for hot-reload in development
+      - ./src:/app/src
+      - ./logs:/app/logs
+    command: npm run dev
+
+networks:
+  app-network:
+    driver: bridge
