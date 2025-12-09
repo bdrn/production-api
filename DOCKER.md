@@ -24,6 +24,7 @@ This application uses different database configurations for development and prod
 Before you begin, ensure you have:
 
 1. **Docker** and **Docker Compose** installed on your machine
+
    - Docker Desktop (recommended) or Docker Engine + Docker Compose plugin
    - Verify installation: `docker --version` and `docker compose version`
 
@@ -39,11 +40,13 @@ Before you begin, ensure you have:
 ### Step 1: Configure Environment Variables
 
 1. Copy the development environment template:
+
    ```bash
    cp .env.development .env.development.local
    ```
 
 2. Edit `.env.development.local` and add your Neon credentials:
+
    ```bash
    # Required for Neon Local
    NEON_API_KEY=neon_api_xxxxxxxxxxxxx
@@ -68,6 +71,7 @@ docker compose -f docker-compose.dev.yml --env-file .env.development.local up --
 ```
 
 This command will:
+
 - Build your application Docker image
 - Start Neon Local proxy (creates an ephemeral database branch)
 - Start your application connected to Neon Local
@@ -76,16 +80,19 @@ This command will:
 ### Step 3: Verify Development Setup
 
 1. Check that both services are running:
+
    ```bash
    docker compose -f docker-compose.dev.yml ps
    ```
 
 2. Test your application:
+
    ```bash
    curl http://localhost:3000
    ```
 
 3. View logs:
+
    ```bash
    # All services
    docker compose -f docker-compose.dev.yml logs -f
@@ -120,11 +127,13 @@ docker compose -f docker-compose.dev.yml down
 ### Step 1: Configure Production Environment
 
 1. Copy the production environment template:
+
    ```bash
    cp .env.production .env.production.local
    ```
 
 2. Edit `.env.production.local` with your production Neon database URL:
+
    ```bash
    NODE_ENV=production
    PORT=3000
@@ -159,6 +168,7 @@ docker compose -f docker-compose.prod.yml --env-file .env.production.local up -d
 ```
 
 This command will:
+
 - Start your application in production mode
 - Connect directly to Neon Cloud Database
 - Run the container in detached mode (`-d`)
@@ -167,11 +177,13 @@ This command will:
 ### Step 4: Verify Production Setup
 
 1. Check that the service is running:
+
    ```bash
    docker compose -f docker-compose.prod.yml ps
    ```
 
 2. Check health status:
+
    ```bash
    docker compose -f docker-compose.prod.yml exec app wget --no-verbose --tries=1 --spider http://localhost:3000/health
    ```
@@ -193,23 +205,23 @@ docker compose -f docker-compose.prod.yml exec app npm run db:migrate
 
 ### Development Environment Variables
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `NEON_API_KEY` | Your Neon API key | `neon_api_xxxxx` |
-| `NEON_PROJECT_ID` | Your Neon project ID | `broad-tree-12345` |
-| `PARENT_BRANCH_ID` | Parent branch for ephemeral branches | `br-xxxxx` |
-| `DATABASE_URL` | Points to Neon Local | `postgres://neondb_owner:password@neon-local:5432/neondb?sslmode=require` |
-| `NODE_ENV` | Environment | `development` |
-| `LOG_LEVEL` | Logging level | `debug` |
+| Variable           | Description                          | Example                                                                   |
+| ------------------ | ------------------------------------ | ------------------------------------------------------------------------- |
+| `NEON_API_KEY`     | Your Neon API key                    | `neon_api_xxxxx`                                                          |
+| `NEON_PROJECT_ID`  | Your Neon project ID                 | `broad-tree-12345`                                                        |
+| `PARENT_BRANCH_ID` | Parent branch for ephemeral branches | `br-xxxxx`                                                                |
+| `DATABASE_URL`     | Points to Neon Local                 | `postgres://neondb_owner:password@neon-local:5432/neondb?sslmode=require` |
+| `NODE_ENV`         | Environment                          | `development`                                                             |
+| `LOG_LEVEL`        | Logging level                        | `debug`                                                                   |
 
 ### Production Environment Variables
 
-| Variable | Description | Example |
-|----------|-------------|---------|
+| Variable       | Description             | Example                                                                   |
+| -------------- | ----------------------- | ------------------------------------------------------------------------- |
 | `DATABASE_URL` | Neon Cloud database URL | `postgres://user:pass@ep-xxx.region.aws.neon.tech/dbname?sslmode=require` |
-| `NODE_ENV` | Environment | `production` |
-| `LOG_LEVEL` | Logging level | `info` |
-| `JWT_SECRET` | JWT signing secret | Strong random string |
+| `NODE_ENV`     | Environment             | `production`                                                              |
+| `LOG_LEVEL`    | Logging level           | `info`                                                                    |
+| `JWT_SECRET`   | JWT signing secret      | Strong random string                                                      |
 
 ## Docker Commands Reference
 
@@ -276,6 +288,7 @@ docker compose -f docker-compose.prod.yml restart app
 **Issue**: Neon Local container fails to start or times out
 
 **Solutions**:
+
 1. Verify your Neon credentials are correct in `.env.development.local`
 2. Check Neon Local logs: `docker compose -f docker-compose.dev.yml logs neon-local`
 3. Ensure your Neon API key has proper permissions
@@ -288,11 +301,13 @@ docker compose -f docker-compose.prod.yml restart app
 **Solutions**:
 
 For Development:
+
 1. Wait for Neon Local health check to pass (can take 10-20 seconds)
 2. Check that `DATABASE_URL` points to `neon-local:5432` (not `localhost`)
 3. Verify Neon Local is running: `docker compose -f docker-compose.dev.yml ps`
 
 For Production:
+
 1. Verify your `DATABASE_URL` is correct in `.env.production.local`
 2. Ensure the database URL includes `?sslmode=require`
 3. Test connection from your machine first (outside Docker)
@@ -303,6 +318,7 @@ For Production:
 **Issue**: Error binding to port 3000 or 5432
 
 **Solution**:
+
 ```bash
 # Find process using the port
 lsof -i :3000
@@ -316,6 +332,7 @@ lsof -i :5432
 **Issue**: Code changes don't reflect in running container
 
 **Solution**:
+
 1. Verify volume mounts in `docker-compose.dev.yml`
 2. Ensure you're using `npm run dev` (watch mode)
 3. Rebuild the container: `docker compose -f docker-compose.dev.yml up --build`
@@ -325,60 +342,8 @@ lsof -i :5432
 **Issue**: Database migration fails
 
 **Solutions**:
+
 1. Check database connectivity first
 2. Verify Drizzle schema files exist in `src/models/`
 3. Generate migration first: `docker compose -f docker-compose.dev.yml exec app npm run db:generate`
 4. Then apply migration: `docker compose -f docker-compose.dev.yml exec app npm run db:migrate`
-
-### Health check failing in production
-
-**Issue**: Health check keeps failing in `docker-compose.prod.yml`
-
-**Solution**:
-1. Check if your app has a `/health` endpoint (required for health check)
-2. If not, remove or modify the health check in `docker-compose.prod.yml`
-3. Or add a simple health endpoint to your Express app
-
-## Deployment to Production Platforms
-
-### AWS ECS / Fargate
-
-1. Push your Docker image to Amazon ECR
-2. Create ECS task definition using the production image
-3. Inject `DATABASE_URL` and other secrets via AWS Secrets Manager
-4. Deploy the task definition to ECS/Fargate
-
-### Google Cloud Run
-
-```bash
-# Build and push to Google Container Registry
-docker build -t gcr.io/YOUR_PROJECT/production-api:latest .
-docker push gcr.io/YOUR_PROJECT/production-api:latest
-
-# Deploy with secrets
-gcloud run deploy production-api \
-  --image gcr.io/YOUR_PROJECT/production-api:latest \
-  --set-env-vars NODE_ENV=production \
-  --set-secrets DATABASE_URL=neon-database-url:latest
-```
-
-### Kubernetes
-
-Use the Dockerfile with Kubernetes deployment manifests. Store secrets in Kubernetes Secrets and inject as environment variables.
-
-## Security Best Practices
-
-1. **Never commit `.env.production.local` or `.env.development.local`** - These contain secrets!
-2. Use strong, randomly generated values for `JWT_SECRET` in production
-3. Rotate your Neon API keys periodically
-4. Use separate Neon projects for development and production
-5. Enable Neon's IP allowlist in production
-6. Use Docker secrets or a secrets manager for production deployments
-7. Regularly update Docker base images for security patches
-
-## Additional Resources
-
-- [Neon Documentation](https://neon.tech/docs)
-- [Neon Local Documentation](https://neon.tech/docs/local/neon-local)
-- [Docker Compose Documentation](https://docs.docker.com/compose/)
-- [Drizzle ORM Documentation](https://orm.drizzle.team/)
