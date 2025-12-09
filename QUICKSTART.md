@@ -28,7 +28,6 @@
    ```
 
 4. **Access your app:**
-
    - API: http://localhost:3000
    - Postgres: localhost:5432
 

@@ -24,7 +24,6 @@ This application uses different database configurations for development and prod
 Before you begin, ensure you have:
 
 1. **Docker** and **Docker Compose** installed on your machine
-
    - Docker Desktop (recommended) or Docker Engine + Docker Compose plugin
    - Verify installation: `docker --version` and `docker compose version`
 
