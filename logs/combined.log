@@ -686,3 +686,52 @@
 {"level":"info","message":"User mohamad@gmail.com created successfully","service":"acquisitions-api"}
 {"level":"info","message":"User registered successfully: mohamad@gmail.com","service":"acquisitions-api"}
 {"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:09:57:48 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 104 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"Hello from Acquisition!","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:14:43:17 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:14:43:22 +0000] \"GET /api/users HTTP/1.1\" 404 148 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:14:43:46 +0000] \"GET /api/users HTTP/1.1\" 404 148 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"Getting users..","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:14:44:54 +0000] \"GET /api/users HTTP/1.1\" 200 546 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:14:44:54 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"Getting user with id: 1","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:04:37 +0000] \"GET /api/users/1 HTTP/1.1\" 200 197 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:04:37 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"Getting user with id: 2","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:05:12 +0000] \"GET /api/users/2 HTTP/1.1\" 200 198 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:05:12 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"Getting user with id: 3","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:05:14 +0000] \"GET /api/users/3 HTTP/1.1\" 200 196 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:05:14 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"ip":"::ffff:172.19.0.1","level":"warn","message":"Rate limit exceeded","path":"/api/users/3","service":"acquisitions-api","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:05:19 +0000] \"GET /api/users/3 HTTP/1.1\" 429 59 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"ip":"::ffff:172.19.0.1","level":"warn","message":"Rate limit exceeded","path":"/favicon.ico","service":"acquisitions-api","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:05:19 +0000] \"GET /favicon.ico HTTP/1.1\" 429 59 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"ip":"::ffff:172.19.0.1","level":"warn","message":"Rate limit exceeded","path":"/api/users/3","service":"acquisitions-api","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:05:22 +0000] \"GET /api/users/3 HTTP/1.1\" 429 59 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"ip":"::ffff:172.19.0.1","level":"warn","message":"Rate limit exceeded","path":"/favicon.ico","service":"acquisitions-api","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:05:22 +0000] \"GET /favicon.ico HTTP/1.1\" 429 59 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"ip":"::ffff:172.19.0.1","level":"warn","message":"Rate limit exceeded","path":"/api/users/3","service":"acquisitions-api","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:05:25 +0000] \"GET /api/users/3 HTTP/1.1\" 429 59 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"ip":"::ffff:172.19.0.1","level":"warn","message":"Rate limit exceeded","path":"/favicon.ico","service":"acquisitions-api","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:05:25 +0000] \"GET /favicon.ico HTTP/1.1\" 429 59 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0\"","service":"acquisitions-api"}
+{"ip":"::ffff:172.19.0.1","level":"warn","message":"Rate limit exceeded","path":"/api/auth/sign-in","service":"acquisitions-api","userAgent":"HTTPie"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:05:54 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 429 59 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"error","message":"Error authenticating user: Error: User not found ","service":"acquisitions-api"}
+{"level":"error","message":"Sign in error User not found","service":"acquisitions-api","stack":"Error: User not found\n    at authenticateUser (file:///app/src/services/auth.service.js:66:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async signIn (file:///app/src/controllers/auth.controller.js:65:18)"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:06:06 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 401 31 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:06:13 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 92 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"error","message":"Error authenticating user: Error: Invalid Password ","service":"acquisitions-api"}
+{"level":"error","message":"Sign in error Invalid Password","service":"acquisitions-api","stack":"Error: Invalid Password\n    at authenticateUser (file:///app/src/services/auth.service.js:74:13)\n    at async signIn (file:///app/src/controllers/auth.controller.js:65:18)"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:06:46 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 500 324 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User mohamad@badran.io authenticated successfully","service":"acquisitions-api"}
+{"level":"info","message":"User signed in successfully: mohamad@badran.io","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:06:54 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 117 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:09:08 +0000] \"POST /api/users/2 HTTP/1.1\" 404 151 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"Getting user with id: 2","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:09:12 +0000] \"GET /api/users/2 HTTP/1.1\" 200 198 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"warn","message":"Unauthorized delete attempt: User undefined tried to delete user 2","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:09:32 +0000] \"DELETE /api/users/2 HTTP/1.1\" 403 90 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User authenticated: mohamad@badran.io (admin)","service":"acquisitions-api"}
+{"level":"info","message":"Deleting user with id: 2","service":"acquisitions-api"}
+{"level":"info","message":"User 2 deleted successfully","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:13:16 +0000] \"DELETE /api/users/2 HTTP/1.1\" 200 39 \"-\" \"HTTPie\"","service":"acquisitions-api"}
