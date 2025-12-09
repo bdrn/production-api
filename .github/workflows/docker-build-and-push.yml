@@ -26,6 +26,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+          logout: false
 
       - name: Generate timestamp
         id: timestamp
@@ -53,20 +54,36 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+        env:
+          DOCKER_BUILDKIT: 1
 
       - name: Generate build summary
         if: always()
         run: |
-          echo "## 🐳 Docker Image Built and Pushed" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Image Details" >> $GITHUB_STEP_SUMMARY
-          echo "- **Image Name:** \`${{ secrets.DOCKER_USERNAME }}/production-api\`" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Tags" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          echo "${{ steps.meta.outputs.tags }}" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Platforms" >> $GITHUB_STEP_SUMMARY
-          echo "- linux/amd64" >> $GITHUB_STEP_SUMMARY
-          echo "- linux/arm64" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ job.status }}" == "success" ]; then
+            echo "## 🐳 Docker Image Built and Pushed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Image Details" >> $GITHUB_STEP_SUMMARY
+            echo "- **Image Name:** \`${{ secrets.DOCKER_USERNAME }}/production-api\`" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Tags" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "${{ steps.meta.outputs.tags }}" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Platforms" >> $GITHUB_STEP_SUMMARY
+            echo "- linux/amd64" >> $GITHUB_STEP_SUMMARY
+            echo "- linux/arm64" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## ❌ Docker Build Failed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Troubleshooting" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "If you see 'insufficient scopes' error:" >> $GITHUB_STEP_SUMMARY
+            echo "1. Use a Docker Hub Personal Access Token (PAT) instead of your password" >> $GITHUB_STEP_SUMMARY
+            echo "2. Create a PAT at: https://hub.docker.com/settings/security" >> $GITHUB_STEP_SUMMARY
+            echo "3. Ensure the PAT has 'Read, Write & Delete' permissions" >> $GITHUB_STEP_SUMMARY
+            echo "4. Update the \`DOCKER_PASSWORD\` secret with your PAT" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Make sure the repository \`${{ secrets.DOCKER_USERNAME }}/production-api\` exists on Docker Hub or that your account has permission to create it." >> $GITHUB_STEP_SUMMARY
+          fi

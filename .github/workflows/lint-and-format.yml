@@ -42,34 +42,34 @@ jobs:
         env:
           CI: true
 
+      - name: Initialize summary
+        if: steps.eslint.outcome == 'failure' || steps.prettier.outcome == 'failure'
+        run: |
+          echo "## ❌ Code Quality Checks Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
       - name: Report ESLint failures
         if: steps.eslint.outcome == 'failure'
         run: |
           echo "::error::ESLint found issues. Run 'npm run lint:fix' to automatically fix some issues."
           echo "::notice::To fix ESLint issues locally, run: npm run lint:fix"
+          echo "### ESLint Issues" >> $GITHUB_STEP_SUMMARY
+          echo "- ESLint found code quality issues." >> $GITHUB_STEP_SUMMARY
+          echo "- Fix with: \`npm run lint:fix\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
 
       - name: Report Prettier failures
         if: steps.prettier.outcome == 'failure'
         run: |
           echo "::error::Prettier found formatting issues. Run 'npm run format' to fix them."
           echo "::notice::To fix formatting issues locally, run: npm run format"
+          echo "### Prettier Issues" >> $GITHUB_STEP_SUMMARY
+          echo "- Prettier found formatting issues." >> $GITHUB_STEP_SUMMARY
+          echo "- Fix with: \`npm run format\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
 
       - name: Fail if checks failed
         if: steps.eslint.outcome == 'failure' || steps.prettier.outcome == 'failure'
         run: |
-          echo "## ❌ Code Quality Checks Failed" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ steps.eslint.outcome }}" == "failure" ]; then
-            echo "### ESLint Issues" >> $GITHUB_STEP_SUMMARY
-            echo "- ESLint found code quality issues." >> $GITHUB_STEP_SUMMARY
-            echo "- Fix with: \`npm run lint:fix\`" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-          fi
-          if [ "${{ steps.prettier.outcome }}" == "failure" ]; then
-            echo "### Prettier Issues" >> $GITHUB_STEP_SUMMARY
-            echo "- Prettier found formatting issues." >> $GITHUB_STEP_SUMMARY
-            echo "- Fix with: \`npm run format\`" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-          fi
           echo "Please fix the issues above and commit the changes." >> $GITHUB_STEP_SUMMARY
           exit 1
