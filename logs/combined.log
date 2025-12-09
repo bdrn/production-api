@@ -735,3 +735,9 @@
 {"level":"info","message":"Deleting user with id: 2","service":"acquisitions-api"}
 {"level":"info","message":"User 2 deleted successfully","service":"acquisitions-api"}
 {"level":"info","message":"::ffff:172.19.0.1 - - [09/Dec/2025:15:13:16 +0000] \"DELETE /api/users/2 HTTP/1.1\" 200 39 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/Dec/2025:15:46:43 +0000] \"GET /health HTTP/1.1\" 200 75 \"-\" \"-\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/Dec/2025:15:46:43 +0000] \"GET /api HTTP/1.1\" 200 42 \"-\" \"-\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/Dec/2025:15:46:43 +0000] \"GET /nonexistent HTTP/1.1\" 404 27 \"-\" \"-\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/Dec/2025:16:32:27 +0000] \"GET /health HTTP/1.1\" 200 75 \"-\" \"-\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/Dec/2025:16:32:27 +0000] \"GET /api HTTP/1.1\" 200 42 \"-\" \"-\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/Dec/2025:16:32:27 +0000] \"GET /nonexistent HTTP/1.1\" 404 27 \"-\" \"-\"","service":"acquisitions-api"}
